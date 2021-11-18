@@ -36,14 +36,21 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function(){
-	video.currentTime += 15
-	if (video.ended == true) {
-		video.play()
-		console.log(video.currentTime);
+	currentTime= video.currentTime
+	if (currentTime+15>=video.duration){
+		video.currentTime = 0
 	}
 	else{
-		console.log(video.currentTime);	
+		video.currentTime +=15
 	}
+	//video.currentTime += 15
+	//if (video.ended == true) {
+	//	video.play()
+	//	console.log(video.currentTime);
+	//}
+	//else{
+	console.log(video.currentTime);	
+	//}
 });
 
 document.querySelector("#mute").addEventListener("click", function(){
